@@ -1,0 +1,22 @@
+.header-container {
+  background: #333;
+
+  .navbar {
+    padding: 0 2rem;
+
+    .logo {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .logo:hover {
+      cursor: pointer;
+    }
+
+    .logout {
+      color: #000;
+      position: absolute;
+      right: 2rem;
+    }
+  }
+}
