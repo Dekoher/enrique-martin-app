@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "enrique-martin-cargamos": {
+      "hosting": {
+        "enrique-martin-cargamos": [
+          "enrique-martin-cargamos"
+        ]
+      }
+    }
+  }
+}
