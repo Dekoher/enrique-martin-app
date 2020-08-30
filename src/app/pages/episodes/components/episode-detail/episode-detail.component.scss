@@ -1,4 +1,4 @@
-.episodes-container {
+.episode-container {
   width: 100%;
   height: 100%;
   background-image: url(../../../../../assets/wallpaper-episodes.png);
@@ -16,6 +16,10 @@
 
     table {
       width: 100%;
+
+      img {
+        width: 30%;
+      }
     }
   }
 }

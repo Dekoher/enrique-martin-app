@@ -2,15 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { EpisodesRoutingModule } from './episodes-routing.module';
-import { ComponentComponent } from './component/component.component';
 import { EpisodesComponent } from './components/episodes/episodes.component';
+import { EpisodeDetailComponent } from './components/episode-detail/episode-detail.component';
+
+import { MaterialModule } from '../../material/material.module';
 
 
 @NgModule({
-  declarations: [ComponentComponent, EpisodesComponent],
+  declarations: [EpisodesComponent, EpisodeDetailComponent],
   imports: [
     CommonModule,
-    EpisodesRoutingModule
+    EpisodesRoutingModule,
+    MaterialModule,
   ]
 })
 export class EpisodesModule { }
