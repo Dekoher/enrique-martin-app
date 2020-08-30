@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="home-container">
+  <div *ngIf="hasSession" class="buttons">
+    <a>Characters</a>
+    <a>Locations</a>
+    <a routerLink='/episodes'>Episodes</a>
+  </div>
+</div>
