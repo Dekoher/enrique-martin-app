@@ -3,28 +3,29 @@
   height: 100%;
   background-image: url(../../../../../assets/wallpaper.jpg);
   background-size: cover;
-  opacity: 0.9;
+  background-position: center center;
+  background-repeat: round;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 
   .buttons {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    position: absolute;
-    right: 5%;
-    bottom: 10%;
+    width: 50%;
+    margin-bottom: 5%;
 
     a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
       height: 45px;
       text-align: center;
       background: #000;
-      border: 2px solid #000;
+      border: 3px solid #000;
       border-radius: 5px;
       margin: 8px;
       font-size: 24px;
+      font-weight: bold;
       color: #fff;
       box-shadow: 0 0 10px #000;
       text-decoration: none;
@@ -33,9 +34,35 @@
     a:hover {
       cursor: pointer;
       background: none;
-      border: 2px solid #000;
-      color: #000;
-      font-weight: bold;
+      border: 3px solid #000;
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home-container {
+    .buttons {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .home-container {
+    justify-content: flex-end;
+
+    .buttons {
+      width: 25%;
+      margin-right: 5%;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home-container {
+    .buttons {
+      max-width: 30%;
     }
   }
 }
