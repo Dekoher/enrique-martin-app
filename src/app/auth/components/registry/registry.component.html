@@ -1,5 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="registry($event)">
-  <mat-card>
+  <mat-card class="card-container">
     <mat-card-header>
       <mat-card-title>Registro</mat-card-title>
     </mat-card-header>
@@ -20,7 +20,7 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button [disabled]="form.invalid" mat-raised-button type="submit">Registrar</button>
+      <button [disabled]="form.invalid" mat-raised-button type="submit" [mat-dialog-close]='true'>Registrar</button>
     </mat-card-actions>
   </mat-card>
 </form>

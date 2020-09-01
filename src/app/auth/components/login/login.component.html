@@ -1,5 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="login($event)">
-  <mat-card>
+  <mat-card class="card-container">
     <mat-card-header>
       <mat-card-title>Login</mat-card-title>
     </mat-card-header>
@@ -20,7 +20,7 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button [disabled]="form.invalid" mat-raised-button type="submit">Ingresar</button>
+      <button [disabled]="form.invalid" mat-raised-button type="submit" [mat-dialog-close]='true'>Ingresar</button>
     </mat-card-actions>
   </mat-card>
 </form>

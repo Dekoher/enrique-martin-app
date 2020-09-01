@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/services/auth/auth.service';
 import { Router } from '@angular/router';
+import { ModalComponent } from '../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,11 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   sessionButton: boolean;
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.auth.hasSession().subscribe((session) => {
@@ -21,15 +27,29 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  logOut() {
+  logOut(): void {
     this.auth.logOut().then(() => {
       this.router.navigate(['/home']);
     });
   }
 
-  logIn() {
+  logIn(): void {
     this.auth.logOut().then(() => {
       this.router.navigate(['/auth/login']);
+    });
+  }
+
+  openLoginDialog(): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '350px',
+      data: 'login'
+    });
+  }
+
+  openRigistryDialog(): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '350px',
+      data: 'registry'
     });
   }
 }

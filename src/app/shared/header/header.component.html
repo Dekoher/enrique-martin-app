@@ -3,8 +3,8 @@
     <a routerLink="/home" class="logo">Enrique&Martin<strong>APP</strong></a>
     <button mat-raised-button [matMenuTriggerFor]="beforeMenu" class="logout">Cuenta</button>
     <mat-menu #beforeMenu="matMenu" xPosition="before">
-      <a *ngIf="!sessionButton" routerLink='/auth/login' mat-menu-item>Iniciar</a>
-      <a *ngIf="!sessionButton" routerLink='/auth/registry' mat-menu-item>Registrar</a>
+      <a *ngIf="!sessionButton" mat-menu-item (click)='openLoginDialog()'>Iniciar</a>
+      <a *ngIf="!sessionButton" mat-menu-item (click)='openRigistryDialog()'>Registrar</a>
       <a *ngIf="sessionButton" (click)='logOut()' mat-menu-item>Salir</a>
     </mat-menu>
   </mat-toolbar-row>
