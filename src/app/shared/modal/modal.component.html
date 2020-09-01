@@ -1,0 +1,4 @@
+<div mat-dialog-content [ngSwitch]="message">
+  <app-login *ngSwitchCase="'login'"></app-login>
+  <app-registry *ngSwitchCase="'registry'"></app-registry>
+</div>
