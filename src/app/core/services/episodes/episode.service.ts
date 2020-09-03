@@ -10,8 +10,8 @@ export class EpisodeService {
 
   constructor(private http: HttpClient) { }
 
-  getAllEpisodes(): Observable<any> {
-    return this.http.get(`${environment.urlBase}/episode`);
+  getAllEpisodes(page: number = 1): Observable<any> {
+    return this.http.get(`${environment.urlBase}/episode?page=${page}`);
   }
 
   getEpisode(id: number): Observable<any>  {

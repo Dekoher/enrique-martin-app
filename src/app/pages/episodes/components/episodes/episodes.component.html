@@ -1,45 +1,50 @@
 <div class="episodes-container">
   <div class="datatable">
-    <table
-      mat-table
-      [dataSource]="dataSource"
-      class="mat-elevation-z8 table-episodes"
-    >
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>Capítulo No.</th>
-        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Nombre</th>
-        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-      </ng-container>
-
-      <!-- Weight Column -->
-      <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef>Fecha de estreno</th>
-        <td mat-cell *matCellDef="let element">{{ element.air_date }}</td>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="episode">
-        <th mat-header-cell *matHeaderCellDef>Capitulo/Temporada</th>
-        <td mat-cell *matCellDef="let element">{{ element.episode }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef>Detalle</th>
-        <td mat-cell *matCellDef="let element">
-          <a class="button" mat-raised-button [routerLink]="['/episodes', element.id]">Ver detalle</a>
-        </td>
-      </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
+    <div class="table">
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        class="mat-elevation-z8 table-episodes"
+      >
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Capítulo No.</th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Fecha de estreno</th>
+          <td mat-cell *matCellDef="let element">{{ element.air_date }}</td>
+        </ng-container>
+        <ng-container matColumnDef="episode">
+          <th mat-header-cell *matHeaderCellDef>Capitulo/Temporada</th>
+          <td mat-cell *matCellDef="let element">{{ element.episode }}</td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Detalle</th>
+          <td mat-cell *matCellDef="let element">
+            <a
+              class="button"
+              mat-raised-button
+              [routerLink]="['/episodes', element.id]"
+              >Ver detalle</a
+            >
+          </td>
+        </ng-container>
+        <tr
+          mat-header-row
+          *matHeaderRowDef="displayedColumns; sticky: true"
+        ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [length]="totalEpisodes"
+        [pageSize]="dataSource.length"
+        [pageSizeOptions]="[5, 10, 20]"
+        (page)="OnPageChange($event)"
+      ></mat-paginator>
+    </div>
   </div>
 </div>
