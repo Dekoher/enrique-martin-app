@@ -1,6 +1,6 @@
-# Prueba técnica para [cargamos.com](http://cargamos.com)
+# Technical test for [cargamos.com](http://cargamos.com)
 
-## Construccion de sitio web que consume API pública de rick y morty
+## Development of a website that consumes the Rick & Morty REST API
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
